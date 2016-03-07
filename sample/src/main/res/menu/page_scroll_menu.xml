@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <item
+        android:id="@+id/override"
+        android:title="覆盖模式"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/scroll"
+        android:title="滚动模式"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/stack"
+        android:title="栈模式"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/loop_toggle"
+        android:title="循环/非循环模式"
+        app:showAsAction="never" />
+</menu>
