@@ -19,6 +19,7 @@ import com.edwin.infinitepager.transformer.HorizontalScroll;
 import com.edwin.infinitepager.transformer.HorizontalStack;
 import com.edwin.infinitepager.InfinitePager;
 import com.edwin.infinitepager.PageViewAdapter;
+import com.edwin.infinitepager.transformer.VerticalOverride;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -99,18 +100,31 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.override:
                 psv.reverseContainer(false);
+                psv.enableIntervalLoop(3000);
+                psv.setSlideMode(InfinitePager.SlideMode.HORIZONTAL);
                 psv.setTransformer(new HorizontalOverride(500));
                 break;
             case R.id.scroll:
                 psv.reverseContainer(false);
+                psv.enableIntervalLoop(3000);
+                psv.setSlideMode(InfinitePager.SlideMode.HORIZONTAL);
                 psv.setTransformer(new HorizontalScroll(500));
                 break;
             case R.id.stack:
                 psv.reverseContainer(true);
+                psv.enableIntervalLoop(3000);
+                psv.setSlideMode(InfinitePager.SlideMode.HORIZONTAL);
                 psv.setTransformer(new HorizontalStack(500));
                 break;
             case R.id.loop_toggle:
+                psv.disableIntervalLoop();
                 psv.setIsLoopMode(!psv.isLoopMode());
+                break;
+            case R.id.vertical_override:
+                psv.reverseContainer(false);
+                psv.enableIntervalLoop(3000);
+                psv.setSlideMode(InfinitePager.SlideMode.VERTICAL);
+                psv.setTransformer(new VerticalOverride(500));
                 break;
         }
         return super.onOptionsItemSelected(item);

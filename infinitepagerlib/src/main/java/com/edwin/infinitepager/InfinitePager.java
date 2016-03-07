@@ -678,6 +678,12 @@ public class InfinitePager extends FrameLayout {
         }
     };
 
+    /**
+     * This method will enable internal infinite loop ,
+     * until {@link #disableIntervalLoop()} called .
+     *
+     * @param time
+     */
     public void enableIntervalLoop(long time) {
         if (time < AbsTransformer.DEFAULT_ANIMATION_DURATION) {
             time = AbsTransformer.DEFAULT_ANIMATION_DURATION;
@@ -690,9 +696,11 @@ public class InfinitePager extends FrameLayout {
     }
 
     public void disableIntervalLoop() {
-        setIsLoopMode(preLoopMode);
-        isIntervalLoop = false;
-        autoLoopHandler.removeCallbacks(transformTask);
+        if (isIntervalLoop) {
+            isIntervalLoop = false;
+            setIsLoopMode(preLoopMode);
+            autoLoopHandler.removeCallbacks(transformTask);
+        }
     }
 }
 

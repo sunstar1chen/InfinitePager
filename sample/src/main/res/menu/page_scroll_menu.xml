@@ -18,4 +18,8 @@
         android:id="@+id/loop_toggle"
         android:title="循环/非循环模式"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/vertical_override"
+        android:title="覆盖模式_垂直"
+        app:showAsAction="never" />
 </menu>
